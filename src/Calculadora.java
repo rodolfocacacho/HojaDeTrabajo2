@@ -20,8 +20,8 @@ public class Calculadora implements I_Calculadora {
 			}
 			catch(Exception e){ // si no, es porque es un operador
                             
-                            try{
-                                int b = (int)pila.Pop();
+                            try{ // Se realiza este try en caso de que el string no se alguno de los operadores
+                                int b = (int)pila.Pop(); // Se sacan los dos ultimos operandos de la pila para luego operarlos
                                 int a = (int)pila.Pop();
 				switch(splitedOps[i]){
 
@@ -68,7 +68,7 @@ public class Calculadora implements I_Calculadora {
 	}
 
 	@Override
-	public String LeerArrchivo(String direccion) {
+	public String LeerArchivo(String direccion) {
 		String instrucciones = "";
 		try{
 			BufferedReader bf = new BufferedReader(new FileReader(direccion));
